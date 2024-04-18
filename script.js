@@ -6,12 +6,12 @@ import { getStorage, ref as sRef, getDownloadURL} from "https://www.gstatic.com/
 //configuration for Firebase
   const firebaseConfig = {
     apiKey: "AIzaSyA_0FEUpKw47rpUJcMIaT9epnhPXvVWSzg",
-  authDomain: "cognicarearcade.firebaseapp.com",
-  databaseURL: "https://cognicarearcade-default-rtdb.firebaseio.com",
-  projectId: "cognicarearcade",
-  storageBucket: "cognicarearcade.appspot.com",
-  messagingSenderId: "779743799435",
-  appId: "1:779743799435:web:71bbac7cd230e5678c4c8e"
+    authDomain: "cognicarearcade.firebaseapp.com",
+    databaseURL: "https://cognicarearcade-default-rtdb.firebaseio.com",
+    projectId: "cognicarearcade",
+    storageBucket: "cognicarearcade.appspot.com",
+    messagingSenderId: "779743799435",
+    appId: "1:779743799435:web:71bbac7cd230e5678c4c8e"
   };
 
   // Initialize Firebase
@@ -26,28 +26,29 @@ import { getStorage, ref as sRef, getDownloadURL} from "https://www.gstatic.com/
 
 const video = document.getElementById("video");
 
+//Retrieving usernames and images from database
     const labels = [];
     const dTokens = [];
 
     const dbRef = ref(getDB);
-    get(child(dbRef, 'username')).then((snapshot)=>{
-        var data = snapshot.val();
-        for(let i in data){
-
-            labels.push(data[i].replaceAll('"', '')); 
-
-            get(child(dbRef, data[i].replaceAll('"', ''))).then((snapshot)=>{
-            var data2 = snapshot.val();
-            for(let i in data2){
+      get(child(dbRef, 'username')).then((snapshot)=>{
+          var data = snapshot.val();
+          for(let i in data){
+  
+              labels.push(data[i].replaceAll('"', '')); 
+  
+              get(child(dbRef, data[i].replaceAll('"', ''))).then((snapshot)=>{
+              var data2 = snapshot.val();
+              for(let i in data2){
+      
+                  dTokens.push(data2[i].replaceAll('"', ''));           
+              }
+              
+          })          
+          }
+      })
     
-                dTokens.push(data2[i].replaceAll('"', ''));           
-            }
-            console.log(dTokens)
-        })          
-        }
-    })
-    
-
+//Load libraries for face detection and recognition
 Promise.all([
   faceapi.nets.ssdMobilenetv1.loadFromUri("weights"),
   faceapi.nets.faceRecognitionNet.loadFromUri("weights"),
