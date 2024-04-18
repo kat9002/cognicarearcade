@@ -80,6 +80,7 @@ function getLabeledFaceDescriptions() {
       const descriptions = [];
         var a = label;
         var token = dTokens[labels.indexOf(label)];
+       console.log(labels);
 
         var file = `https://firebasestorage.googleapis.com/v0/b/cognicarearcade.appspot.com/o/${label.replaceAll(' ', '%20')}%2F1.jpg?alt=media&token=`+token
         
