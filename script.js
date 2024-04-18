@@ -80,7 +80,7 @@ function getLabeledFaceDescriptions() {
         var a = label;
         var token = dTokens[labels.indexOf(label)];
 
-        var file = `https://firebasestorage.googleapis.com/v0/b/facerecognitiontestdb.appspot.com/o/${label.replaceAll(' ', '%20')}%2F1.jpg?alt=media&token=`+token
+        var file = `https://firebasestorage.googleapis.com/v0/b/cognicarearcade.appspot.com/o/${label.replaceAll(' ', '%20')}%2F1.jpg?alt=media&token=`+token
         
         console.log(token)
         console.log(file)
