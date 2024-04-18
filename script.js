@@ -5,13 +5,13 @@ import { getStorage, ref as sRef, getDownloadURL} from "https://www.gstatic.com/
 
 //configuration for Firebase
   const firebaseConfig = {
-    apiKey: "AIzaSyCIIIWf-HcWXVOqqD82mcxy-3Xx3AtgDcc",
-    authDomain: "facerecognitiontestdb.firebaseapp.com",
-    databaseURL: "https://facerecognitiontestdb-default-rtdb.firebaseio.com",
-    projectId: "facerecognitiontestdb",
-    storageBucket: "facerecognitiontestdb.appspot.com",
-    messagingSenderId: "733228864305",
-    appId: "1:733228864305:web:adba281c0d53a7709bd610"
+    apiKey: "AIzaSyA_0FEUpKw47rpUJcMIaT9epnhPXvVWSzg",
+  authDomain: "cognicarearcade.firebaseapp.com",
+  databaseURL: "https://cognicarearcade-default-rtdb.firebaseio.com",
+  projectId: "cognicarearcade",
+  storageBucket: "cognicarearcade.appspot.com",
+  messagingSenderId: "779743799435",
+  appId: "1:779743799435:web:71bbac7cd230e5678c4c8e"
   };
 
   // Initialize Firebase
