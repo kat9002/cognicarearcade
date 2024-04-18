@@ -49,9 +49,9 @@ const video = document.getElementById("video");
     
 
 Promise.all([
-  faceapi.nets.ssdMobilenetv1.loadFromUri("./weights"),
-  faceapi.nets.faceRecognitionNet.loadFromUri("./weights"),
-  faceapi.nets.faceLandmark68Net.loadFromUri("./weights"),
+  faceapi.nets.ssdMobilenetv1.loadFromUri("weights"),
+  faceapi.nets.faceRecognitionNet.loadFromUri("weights"),
+  faceapi.nets.faceLandmark68Net.loadFromUri("weights"),
 ]).then(startWebcam);
 
 function startWebcam() {
